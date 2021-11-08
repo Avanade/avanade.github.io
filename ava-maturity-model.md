@@ -8,12 +8,21 @@ This document describes and defines Avanade's maturity model for Open-Source and
 
 This is intended to support Avanade and the broader community, to understand the level of expected quality, and strategic importance for projects that are maintained by Avanade.
 
-Projects on the [Avanade GitHub](https://github.com/avanade) or [Avanade InnerSource](https://github.com/ava-innersource) must
+Projects on the [Avanade GitHub](https://github.com/avanade) or [Avanade InnerSource](https://github.com/ava-innersource) must follow the standards below.
 
 # Types of Avanade project
 Avanade supports multiple project types. InnerSource projects are those which are focussed on internal employees within the [Avanade InnerSource](https://github.com/ava-innersource) GitHub organizaion. Open-Source projects are those which are publicly available to the world on our [Avanade GitHub](https://github.com/avanade).
 
 Our bias is to promote repositories to be open, and unless there is a reason to collaborate internally, we aim to migrate InnerSource projects to our [Avanade GitHub](https://github.com/avanade).
+
+## Shields
+Shield URLs for each example are found below - you'll need to take the image URL, and link out to the [maturity model](https://avanade.github.io/maturity-model/) like so:
+
+
+> [![New Ava InnerSource](https://img.shields.io/badge/New-Ava--InnerSource-%23DC4600?labelColor=%23e5e5e5)](https://avanade.github.io/code-of-conduct/)
+```
+[![New Ava InnerSource](https://img.shields.io/badge/New-Ava--InnerSource-%23DC4600?labelColor=%23e5e5e5)](https://avanade.github.io/code-of-conduct/)
+```
 
 
 ## InnerSource
