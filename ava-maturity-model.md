@@ -19,9 +19,9 @@ Our bias is to promote repositories to be open, and unless there is a reason to 
 Shield URLs for each example are found below - you'll need to take the image URL, and link out to the [maturity model](https://avanade.github.io/maturity-model/) like so:
 
 
-> [![New Ava InnerSource](https://img.shields.io/badge/New-Ava--InnerSource-%23DC4600?labelColor=%23e5e5e5)](https://avanade.github.io/code-of-conduct/)
+> [![New Ava InnerSource](https://img.shields.io/badge/New-Ava--InnerSource-%23DC4600?labelColor=%23e5e5e5)](https://avanade.github.io/maturity-model/)
 ```
-[![New Ava InnerSource](https://img.shields.io/badge/New-Ava--InnerSource-%23DC4600?labelColor=%23e5e5e5)](https://avanade.github.io/code-of-conduct/)
+[![New Ava InnerSource](https://img.shields.io/badge/New-Ava--InnerSource-%23DC4600?labelColor=%23e5e5e5)](https://avanade.github.io/maturity-model/)
 ```
 
 
@@ -38,11 +38,12 @@ Shield URLs for each example are found below - you'll need to take the image URL
 
 | Name | Requirements | Description | Badge | Badge URL |
 | ---- | ------------ | ----------- | ----- | ---------- |
-| Incubating | • Community health files (LICENCE.md, CONTRIBUTING.MD, SECURITY.md) included. • Code scans configured for each pull request, and regular scans, including for vulnerabilities, secret keys, and intellectual property. | Proof of concepts and new projects. | ![Incubating Ava Maturity](https://img.shields.io/badge/Incubating-Ava--Maturity-%23FF5800?labelColor=yellow) | `hhttps://img.shields.io/badge/Incubating-Ava--Maturity-%23FF5800?labelColor=yellow` |
-| Working | • Everything from Incubating. •  Release candidate or packages available. • Basic setup instructions documentation. | A working concept, but it's early. | ![Incubating Ava Maturity](https://img.shields.io/badge/Incubating-Ava--Maturity-%23FF5800?labelColor=yellowgreen) | `https://img.shields.io/badge/Incubating-Ava--Maturity-%23FF5800?labelColor=yellowgreen` |
-| Ready | • Everything from Working. • CI/CD configured. • Mature documentation including sample, setup, and FAQs. | The team self-certify as production ready, but no Avanade official backing. | ![Incubating Ava Maturity](https://img.shields.io/badge/Incubating-Ava--Maturiy-%23FF5800?labelColor=green) | `https://img.shields.io/badge/Incubating-Ava--Maturiy-%23FF5800?labelColor=green` |
+| Incubating | • Community health files (LICENCE.md, CONTRIBUTING.MD, SECURITY.md) included. • Code scans configured for each pull request, and regular scans, including for vulnerabilities, secret keys, and intellectual property. | Proof of concepts and new projects. | ![Incubating Ava Maturity](https://img.shields.io/badge/Incubating-Ava--Maturity-%23FF5800?labelColor=yellow) | `https://img.shields.io/badge/Incubating-Ava--Maturity-%23FF5800?labelColor=yellow` |
+| Working | • Everything from Incubating. •  Release candidate or packages available. • Basic setup instructions documentation. | A working concept, but it's early. | ![Working Ava Maturity](https://img.shields.io/badge/Working-Ava--Maturity-%23FF5800?labelColor=yellowgreen) | `https://img.shields.io/badge/Working-Ava--Maturity-%23FF5800?labelColor=yellowgreen` |
+| Ready | • Everything from Working. • CI/CD configured. • Mature documentation including sample, setup, and FAQs. | The team self-certify as production ready, but no Avanade official backing. | ![Ready Ava Maturity](https://img.shields.io/badge/Ready-Ava--Maturity-%23FF5800?labelColor=green) | `https://img.shields.io/badge/Ready-Ava--Maturity-%23FF5800?labelColor=green` |
 
-#### Avanade Official - Strategic
+### Avanade Official - Strategic
+
 | Name | Requirements | Description | Badge | Badge URL |
 | ---- | ------------ | ----------- | ----- | ---------- |
 | Strategic | • Avanade sign-off. •  Maintenance, bug support, long term support - and a notice of retirement in advance of deciding to do so. | Noted as a strategic project for Avanade. | ![Avanade Strategic](https://img.shields.io/badge/Strategic-Avanade-%23FF5800?labelColor=brightgreen) | `https://img.shields.io/badge/Strategic-Avanade-%23FF5800?labelColor=brightgreen` |
