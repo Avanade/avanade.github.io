@@ -5,6 +5,8 @@ permalink: /code-of-conduct/
 
 # Contributor Covenant Code of Conduct
 
+This code of conduct adopts the Contributor Covenant, and Avanade expects all participants in any open source community that we support to abide by this code of conduct.
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
