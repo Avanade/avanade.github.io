@@ -1,271 +1,198 @@
 ---
+# Note: Front matter needed so Jekyll processes this file.
 ---
-/* Import the base Jekyll theme, then override with Avanade styles */
-@import "{{ site.theme }}";
 
-/*-----------------------------*/
-/* BRAND & BASE CONFIGURATION  */
-/*-----------------------------*/
+/* ================================
+   1. Variables & Core Settings
+   ================================ */
+$brand-color: #ee650b;      // Avanade primary orange
+$brand-color-dark: #be5008; // Slightly darker orange for hovers
+$gradient-start: #ee650b;
+$gradient-end:   #be5008;
 
-/* Avanade brand colors */
-$avanade-orange: #ff5800;
-$avanade-orange-dark: #e65000;
-$avanade-black: #000000;
-$avanade-white: #ffffff;
-$avanade-grey: #666666;
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$max-width: 800px;
+$mobile-breakpoint: 768px;
 
-/* Typography & font scaling */
-$base-font-stack: "Segoe UI", "WeblySleek UI", Helvetica, Arial, sans-serif;
-$heading-font-weight: 600;  /* Semi-bold headings for modern style */
-$base-font-size: 16px;      /* Base font size for readability */
-$body-line-height: 1.6;
-
-/*-----------------------------*/
-/* GLOBAL RESETS & BASICS      */
-/*-----------------------------*/
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: $base-font-stack;
-  font-size: $base-font-size;
-  line-height: $body-line-height;
-  color: $avanade-black;
-  background-color: $avanade-white;
-}
-
-/* Override for headings, table headers, etc. */
-h1, h2, h3, h4, h5, h6, th {
-  font-family: $base-font-stack;
-  font-weight: $heading-font-weight; 
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  line-height: 1.25;
-}
-
-/*-----------------------------*/
-/* HEADER WRAP                  */
-/*-----------------------------*/
-
-#header_wrap {
-  /* Avanade orange header */
-  background-color: $avanade-orange;
-  background-image: none;
-  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.3);
-  border-bottom: none;
-  position: fixed;
-  top: 0;
-  left: auto;
-  right: 0;
-  width: 100%;
-  min-height: 64px;  /* Keep header area smaller for a modern look */
-  z-index: 1100;
+html {
   box-sizing: border-box;
-  display: flex;       /* Use flex to help center content horizontally & vertically */
-  flex-direction: column;
-  justify-content: center;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
-/* Inner wrap for site title, tagline, and optional nav */
-#header_wrap .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  max-width: 1200px;
+/* ============================
+   2. Global Base Styles
+   ============================ */
+body {
+  margin: 0;
+  font-family: $font-stack;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+a:hover {
+  color: $brand-color-dark;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5rem 0 1rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #111;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* Paragraph spacing */
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* Container for consistent max-width */
+.container {
+  max-width: $max-width;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Project title & tagline (left side by default) */
-#project_title {
-  font-family: $base-font-stack;
-  text-shadow: none;
-  letter-spacing: 0;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: $avanade-white;
-  margin: 0;
-  line-height: 1.2;
+/* ==========================
+   3. Navigation Bar
+   ========================== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2px solid $brand-color;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  z-index: 999;
 }
 
-#project_tagline {
-  font-family: $base-font-stack;
-  letter-spacing: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  color: $avanade-white;
-  margin: 0;
-  margin-top: 0.25rem;
-}
-
-/*-----------------------------*/
-/* TOP NAVIGATION (optional)   */
-/*-----------------------------*/
-
-#main_nav {
+.navbar-inner {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $brand-color-dark;
+}
+
+.nav-links {
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
-
-#main_nav li {
-  margin-left: 1.5rem;
-}
-
-#main_nav li a {
-  text-decoration: none;
-  color: $avanade-white;
-  font-weight: 500;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 0.5rem;
-}
-
-/* Hover & focus states */
-#main_nav li a:hover,
-#main_nav li a:focus {
-  color: $avanade-orange;
-  background-color: $avanade-white;
+.nav-links li a {
+  padding: 0.5rem 1rem;
   border-radius: 4px;
 }
+.nav-links li a:hover {
+  background-color: #f2f2f2;
+}
 
-/* Mobile adjustments for nav */
-@media (max-width: 768px) {
-  #header_wrap .inner {
+/* ==========================
+   4. Header (Hero) Banner
+   ========================== */
+.header-banner {
+  /* Push down for fixed nav: */
+  padding-top: 4rem;
+  background: linear-gradient(135deg, $gradient-start, $gradient-end);
+  color: #fff;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.header-content {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.header-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+.header-content h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #f9f9f9;
+}
+
+/* ==========================
+   5. Main Content
+   ========================== */
+.content {
+  margin-top: 2rem; /* Spacing below banner */
+  padding-bottom: 2rem;
+}
+
+/* ==========================
+   6. Footer
+   ========================== */
+.site-footer {
+  background-color: #f8f8f8;
+  color: #555;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
+}
+.footer-content {
+  text-align: center;
+}
+.site-footer a {
+  color: $brand-color-dark;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   7. Responsive Adjustments
+   ========================== */
+@media (max-width: $mobile-breakpoint) {
+
+  .navbar-inner {
     flex-direction: column;
     align-items: flex-start;
-    height: auto;
   }
-  #main_nav {
-    margin-top: 0.5rem;
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
   }
-  #main_nav li {
-    margin: 0 0 0.5rem 0;
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
   }
-}
 
-/*-----------------------------*/
-/* MAIN CONTENT WRAPPER        */
-/*-----------------------------*/
+  .header-content h1 {
+    font-size: 2rem;
+  }
 
-#main_content_wrap {
-  /* Provide top padding so content doesn’t hide behind fixed header */
-  padding-top: 100px;
-  background: linear-gradient(0deg, #eef0f4 0%, #ffffff 100%);
-  min-height: 80vh; /* Ensure decent vertical space */
-}
-
-/* The content section itself */
-#main_content {
-  font-size: 1rem;
-  font-weight: 300;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-#main_content h1 {
-  color: $avanade-orange;
-  font-size: 2.25rem;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 0.75em;
-}
-
-#main_content h2 {
-  font-size: 1.875rem;
-  font-weight: 500;
-  margin-bottom: 0.5em;
-}
-#main_content h3 {
-  font-size: 1.375rem;
-  font-weight: 500;
-  line-height: 1.6;
-}
-#main_content h4,
-#main_content h5 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-/*-----------------------------*/
-/* LIST STYLES                 */
-/*-----------------------------*/
-
-ul, ol {
-  list-style: none;
-  padding-left: 1.25rem;
-  margin-bottom: 1em;
-  position: relative; /* So bullet/number can be absolutely positioned */
-}
-
-ul li::before {
-  color: $avanade-orange;
-  width: 1em;
-  content: "\\2022";
-  display: inline-block;
-  position: absolute;
-  margin-left: -1.5em;
-  margin-right: 0.5em;
-}
-
-ol {
-  counter-reset: li;
-}
-ol li {
-  counter-increment: li;
-}
-ol li::before {
-  color: $avanade-orange;
-  width: 1em;
-  content: counter(li) ".";
-  display: inline-block;
-  position: absolute;
-  margin-left: -1.75em;
-  margin-right: 0.5em;
-}
-
-/*-----------------------------*/
-/* LINKS                       */
-/*-----------------------------*/
-
-a {
-  color: $avanade-orange;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover,
-a:focus {
-  color: $avanade-orange-dark;
-  text-decoration: underline;
-}
-
-/*-----------------------------*/
-/* FOOTER WRAP                 */
-/*-----------------------------*/
-
-#footer_wrap {
-  background-color: $avanade-grey;
-  color: $avanade-white;
-  padding: 2rem 1rem;
-}
-
-#footer_wrap .inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-#footer_wrap a {
-  color: $avanade-white;
-  text-decoration: underline;
-}
-#footer_wrap a:hover {
-  color: $avanade-orange;
-  text-decoration: none;
+  .header-content h2 {
+    font-size: 1.1rem;
+  }
 }

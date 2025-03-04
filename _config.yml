@@ -1,2 +1,6 @@
 theme: jekyll-theme-slate
-title: Avanade - Innovation
+title: avanade.ai
+tagline: "Insights and Innovation"   # (example tagline)
+description: "Avanade Research - Latest insights and innovation updates."
+baseurl: ""
+url: "https://research.avanade.ai" 

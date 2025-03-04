@@ -12,60 +12,63 @@
           href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
     {% seo %}
+    <title>{{ page.title | escape }} - {{ site.title | escape }}</title>
     {% include head-custom.html %}
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-      <header class="inner">
-        <!-- Project title and tagline -->
-        <div>
-          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <!-- Brand or site title -->
+        <div class="navbar-brand">
+          <a href="{{ site.baseurl | prepend: site.url }}">
+            {{ site.title }}
+          </a>
         </div>
 
-        <!-- Optional nav (links to typical Avanade site pages) -->
-        <nav>
-          <ul id="main_nav">
-            <li><a href="#">Industries</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Insights</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#" style="font-weight:600;">Contact Us</a></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+        <!-- Nav links (edit as you like) -->
+        <ul class="nav-links">
+          <li><a href="{{ site.baseurl | prepend: site.url }}">Home</a></li>
+          <li><a href="https://research.avanade.ai/research/">Research</a></li>
+          <!-- Add more menu items here -->
+        </ul>
+      </div>
+    </nav>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        {{ content }}
-      </section>
-    </div>
+    <!-- Gradient Header (Hero) -->
+    <header class="header-banner">
+      <div class="header-content">
+        <h1>{{ site.title }}</h1>
+        <h2>{{ site.description }}</h2>
+      </div>
+    </header>
 
-    <!-- FOOTER -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
+    <!-- Main Content -->
+    <main class="content container">
+      {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content container">
+        <!-- Example: if this is a GitHub Pages project, you can conditionally show project details. -->
         {% if site.github.is_project_page %}
-          <p class="copyright">
-            {{ site.title | default: site.github.repository_name }}
+          <p>
+            {{ site.title }}
             maintained by
-            <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
+            <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
           </p>
         {% endif %}
-
         <p>
-          Published with <a href="https://pages.github.com">GitHub Pages</a> 
-          | &copy;Avanade 2025 
-          | <a href="https://www.avanade.com/en/utility/terms-of-use">Terms of Use</a> 
-          | <a href="https://www.avanade.com/en/utility/privacy-policy">Privacy</a>
+          &copy;Avanade 2025 &bull;
+          Published with <a href="https://pages.github.com">GitHub Pages</a> &bull;
+          <a href="https://www.avanade.com/en/utility/terms-of-use">Terms of Use</a> &bull;
+          <a href="https://www.avanade.com/en/utility/privacy-policy">Privacy</a>
         </p>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
   </body>
 </html>

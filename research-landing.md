@@ -2,11 +2,13 @@
 title: "Research Landing"
 permalink: /research/
 ---
-# Avanade R&D Team
 
-Welcome to the temporary landing page for Avanade’s Research & Development team. We are a dedicated group of technologists, innovators, and industry thought leaders, focused on creating the next wave of breakthroughs in the Microsoft ecosystem and beyond.
-
----
+<section class="hero">
+  <div class="hero-content">
+    <h1>Avanade R&D Team</h1>
+    <p>Welcome to the temporary landing page for Avanade’s Research & Development team. We are a dedicated group of technologists, innovators, and industry thought leaders, focused on creating the next wave of breakthroughs in the Microsoft ecosystem and beyond.</p>
+  </div>
+</section>
 
 ## Who We Are
 - **Purposeful Innovators**: We explore cutting-edge technology and emerging trends to shape the future of digital transformation.
