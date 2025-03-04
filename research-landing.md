@@ -40,7 +40,7 @@ permalink: /research/
 ## Stay Connected
 This page is a placeholder while we prepare the full Avanade R&D site. For more information or collaboration opportunities, please reach out via [research@avanade.com](mailto:research@avanade.com).
 
-> **Avanade**
+## Who are Avanade?
 > Avanade is the world’s leading expert on Microsoft. Trusted by over 5,000 clients worldwide, we deliver AI-driven solutions that unlock the full potential of people and technology, optimize operations, foster innovation and drive growth.
 
 > As Microsoft’s Global SI Partner we combine global scale with local expertise in AI, cloud, data analytics, cybersecurity, and ERP to design solutions that prioritize people and drive meaningful impact.

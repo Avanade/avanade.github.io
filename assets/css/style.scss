@@ -1,17 +1,16 @@
 ---
-# Note: Front matter needed so Jekyll processes this file.
+# Front matter ensures Jekyll processes SCSS.
 ---
 
-/* ================================
+/* =========================================
    1. Variables & Core Settings
-   ================================ */
-$brand-color: #ee650b;      // Avanade primary orange
-$brand-color-dark: #be5008; // Slightly darker orange for hovers
-$gradient-start: #ee650b;
-$gradient-end:   #be5008;
+   ========================================= */
+$brand-color:       #ee650b; // Avanade primary orange
+$brand-color-dark:  #be5008; // Darker shade of brand orange
+$gradient-lighter:  #f1913b; // Lighter warm orange for gradient
 
-$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$max-width: 800px;
+$font-stack:        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$max-width:         800px;
 $mobile-breakpoint: 768px;
 
 html {
@@ -21,9 +20,9 @@ html {
   box-sizing: inherit;
 }
 
-/* ============================
+/* =========================================
    2. Global Base Styles
-   ============================ */
+   ========================================= */
 body {
   margin: 0;
   font-family: $font-stack;
@@ -58,8 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
-
-/* Paragraph spacing */
 p {
   margin: 0 0 1rem 0;
 }
@@ -71,9 +68,9 @@ p {
   padding: 0 1rem;
 }
 
-/* ==========================
+/* =========================================
    3. Navigation Bar
-   ========================== */
+   ========================================= */
 .navbar {
   position: fixed;
   top: 0; left: 0;
@@ -99,6 +96,11 @@ p {
   color: $brand-color-dark;
 }
 
+.navbar-brand a img {
+  height:50px;
+  max-height:5vh;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -113,13 +115,13 @@ p {
   background-color: #f2f2f2;
 }
 
-/* ==========================
-   4. Header (Hero) Banner
-   ========================== */
+/* =========================================
+   4. Header (Hero) Banner with Gradient
+   ========================================= */
 .header-banner {
-  /* Push down for fixed nav: */
+  /* Extra top padding for the fixed nav */
   padding-top: 4rem;
-  background: linear-gradient(135deg, $gradient-start, $gradient-end);
+  background: linear-gradient(135deg, $brand-color 0%, $gradient-lighter 100%);
   color: #fff;
   text-align: center;
   padding-bottom: 2rem;
@@ -132,6 +134,7 @@ p {
 .header-content h1 {
   font-size: 2.4rem;
   margin-bottom: 0.5rem;
+  color: #f9f9f9;
 }
 .header-content h2 {
   font-size: 1.4rem;
@@ -139,17 +142,50 @@ p {
   color: #f9f9f9;
 }
 
-/* ==========================
+/* =========================================
    5. Main Content
-   ========================== */
+   ========================================= */
 .content {
-  margin-top: 2rem; /* Spacing below banner */
+  margin-top: 2rem; /* space below banner */
   padding-bottom: 2rem;
 }
 
-/* ==========================
-   6. Footer
-   ========================== */
+.content h1 {
+  background: linear-gradient(90deg, #ce0569 12.66%, #ff5800 94.55%);
+  -webkit-text-fill-color: hsla(0, 0%, 100%, 0);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 hsla(0, 0%, 100%, 0); 
+}
+
+/* =========================================
+   6. Table Styling
+   ========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+th {
+  background-color: #f3f3f3;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+/* For wide tables, wrap in .table-responsive */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* =========================================
+   7. Footer
+   ========================================= */
 .site-footer {
   background-color: #f8f8f8;
   color: #555;
@@ -162,28 +198,24 @@ p {
 }
 .site-footer a {
   color: $brand-color-dark;
-  text-decoration: none;
 }
 .site-footer a:hover {
   text-decoration: underline;
 }
 
-/* ==========================
-   7. Responsive Adjustments
-   ========================== */
+/* =========================================
+   8. Responsive Adjustments
+   ========================================= */
 @media (max-width: $mobile-breakpoint) {
-
   .navbar-inner {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .nav-links {
     flex-direction: column;
     width: 100%;
   }
   .nav-links li a {
-    display: block;
     width: 100%;
     padding: 0.5rem;
   }
@@ -191,7 +223,6 @@ p {
   .header-content h1 {
     font-size: 2rem;
   }
-
   .header-content h2 {
     font-size: 1.1rem;
   }
